@@ -62,7 +62,10 @@ export function DownloadAudio() {
       return
     }
       try {
-        const response = await api.get<Blob>(`/download/?video=${url}`, {
+        const response = await api.get<Blob>('/download', {
+          params: {
+            video: url
+          },
           responseType: 'blob',
           onDownloadProgress: (progressEvent) => {
             if (progressEvent.total) {
