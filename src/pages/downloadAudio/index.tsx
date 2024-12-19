@@ -62,7 +62,7 @@ export function DownloadAudio() {
       return
     }
       try {
-        const response = await api.get<Blob>('/download', {
+        const response = await api.get<Blob>('/download/', {
           params: {
             video: url
           },
